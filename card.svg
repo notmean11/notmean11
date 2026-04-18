@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800" height="200"
+     viewBox="0 0 800 200"
+     preserveAspectRatio="xMidYMid meet">
+
+  <style>/* ─── Keyframes ──────────────────────────────────────────────────── */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes rotate-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes rotate-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes breathe {
+  0%, 100% { r: 3;   opacity: 0.9; }
+  50%       { r: 5;   opacity: 0.4; }
+}
+
+@keyframes drift-x {
+  0%, 100% { transform: translateX(0px); }
+  50%       { transform: translateX(6px); }
+}
+
+@keyframes drift-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+@keyframes dash-spin {
+  to { stroke-dashoffset: -100; }
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 0.06; }
+  50%       { opacity: 0.14; }
+}
+
+/* ─── Left cluster ───────────────────────────────────────────────── */
+
+.l-ring-a {
+  fill: none; stroke: #fff; stroke-width: 0.6; opacity: 0;
+  transform-origin: 160px 100px;
+  animation:
+    fade-in 1.2s ease forwards 0s,
+    rotate-cw 24s linear infinite;
+}
+.l-ring-b {
+  fill: none; stroke: #fff; stroke-width: 0.5;
+  stroke-dasharray: 3 9; opacity: 0;
+  transform-origin: 160px 100px;
+  animation:
+    fade-in 1.2s ease forwards 0.2s,
+    rotate-ccw 14s linear infinite;
+}
+.l-ring-c {
+  fill: none; stroke: #fff; stroke-width: 0.3; opacity: 0;
+  transform-origin: 160px 100px;
+  animation:
+    fade-in 1.2s ease forwards 0.4s,
+    rotate-cw 40s linear infinite;
+}
+.l-dot {
+  fill: #fff; opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.6s, breathe 3s ease-in-out infinite 1s;
+}
+
+/* ─── Center cluster ─────────────────────────────────────────────── */
+
+.c-cross-h {
+  stroke: #fff; stroke-width: 0.4; opacity: 0;
+  animation: fade-in 1s ease forwards 0.3s;
+}
+.c-cross-v {
+  stroke: #fff; stroke-width: 0.4; opacity: 0;
+  animation: fade-in 1s ease forwards 0.5s;
+}
+.c-rect-outer {
+  fill: none; stroke: #fff; stroke-width: 0.5; opacity: 0;
+  transform-origin: 400px 100px;
+  animation:
+    fade-in 1s ease forwards 0.4s,
+    rotate-cw 30s linear infinite;
+}
+.c-rect-inner {
+  fill: none; stroke: #fff; stroke-width: 0.4;
+  stroke-dasharray: 2 6; opacity: 0;
+  transform-origin: 400px 100px;
+  animation:
+    fade-in 1s ease forwards 0.6s,
+    rotate-ccw 20s linear infinite;
+}
+.c-dot {
+  fill: #fff; opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.8s, breathe 4s ease-in-out infinite 1.5s;
+}
+
+/* ─── Right cluster ──────────────────────────────────────────────── */
+
+.r-ring-a {
+  fill: none; stroke: #fff; stroke-width: 0.6; opacity: 0;
+  transform-origin: 640px 100px;
+  animation:
+    fade-in 1.2s ease forwards 0.1s,
+    rotate-ccw 20s linear infinite;
+}
+.r-ring-b {
+  fill: none; stroke: #fff; stroke-width: 0.4;
+  stroke-dasharray: 5 5; opacity: 0;
+  transform-origin: 640px 100px;
+  animation:
+    fade-in 1.2s ease forwards 0.3s,
+    rotate-cw 12s linear infinite;
+}
+.r-dot {
+  fill: #fff; opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.5s, breathe 3.5s ease-in-out infinite 2s;
+}
+
+/* ─── Connectors ─────────────────────────────────────────────────── */
+
+.connector {
+  stroke: #fff; stroke-width: 0.3; opacity: 0;
+  animation: fade-in 1.5s ease forwards 0.8s;
+}
+
+/* ─── Background grid (very subtle) ─────────────────────────────── */
+
+.grid-line {
+  stroke: #fff; stroke-width: 0.3;
+  animation: pulse-opacity 6s ease-in-out infinite;
+}
+</style>
+
+  <!-- background -->
+  <rect width="800" height="200" fill="#0d1117" />
+
+  <!-- subtle grid -->
+  <line class="grid-line" x1="0"    y1="100" x2="800"  y2="100" style="animation-delay:0s"  />
+  <line class="grid-line" x1="400" y1="0"    x2="400" y2="200"  style="animation-delay:2s"  />
+
+  <!-- left cluster -->
+  <circle class="l-ring-a" cx="160" cy="100" r="55" />
+  <circle class="l-ring-b" cx="160" cy="100" r="36" />
+  <circle class="l-ring-c" cx="160" cy="100" r="18" />
+  <circle class="l-dot"    cx="160" cy="100" r="3"  />
+
+  <!-- center cluster -->
+  <line class="c-cross-h" x1="350" y1="100" x2="450" y2="100" />
+  <line class="c-cross-v" x1="400" y1="50" x2="400" y2="150" />
+  <rect class="c-rect-outer" x="370" y="70" width="60" height="60" />
+  <rect class="c-rect-inner" x="385" y="85" width="30" height="30" />
+  <circle class="c-dot" cx="400" cy="100" r="3" />
+
+  <!-- right cluster -->
+  <circle class="r-ring-a" cx="640" cy="100" r="50" />
+  <circle class="r-ring-b" cx="640" cy="100" r="28" />
+  <circle class="r-dot"    cx="640" cy="100" r="3"  />
+
+  <!-- connectors -->
+  <line class="connector" x1="215" y1="100" x2="370" y2="100" opacity="0.15" />
+  <line class="connector" x1="430" y1="100" x2="590" y2="100" opacity="0.15" />
+
+</svg>
