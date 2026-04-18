@@ -1,13 +1,13 @@
-<img src="gitbg.gif"/>
+<p align="center">
+  <img src="card.svg" width="800" />
+</p>
 
+<br/>
 
-# 👋 Hi, I'm Mean! 
+<p align="center">
+  Mean &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Bangkok
+</p>
 
-🚀 **Full-Stack Developer**  
-⌨️ Currently working at [MYORDER INTELLIGENCE](https://landing.myorder.ai/) | 📍 Based in Bangkok, Thailand | 🫵 wanna know me better? [CLICK HERE](https://notbeingmean.com)
-
-
-
-*Bro listen, I used arch btw!*
-
-
+<p align="center">
+  <a href="https://notmean.cc">notmean.cc</a> &nbsp;·&nbsp; <a href="https://landing.myorder.ai/">MYORDER INTELLIGENCE</a>
+</p>
